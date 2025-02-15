@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import type { Schema } from "../amplify/data/resource";
 import { generateClient } from "aws-amplify/data";
 import { useAuthenticator } from '@aws-amplify/ui-react';
-import { FileUploader } from '@aws-amplify/ui-react-storage';
+import { DefaultFileUploaderExample } from './FileUploaderExample'; // Import the new component
 import '@aws-amplify/ui-react/styles.css';
 
 const client = generateClient<Schema>();
@@ -49,14 +49,8 @@ function App() {
       </div>
       <div>
         <h4></h4>
-        <FileUploader
-          acceptedFileTypes={['image/*']}
-          path="public/"
-          maxFileCount={1}
-          isResumable
-        />
+        <DefaultFileUploaderExample /> {/* Use the new component */}
       </div>
-
     </main>
   );
 }
