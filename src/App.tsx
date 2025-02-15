@@ -31,7 +31,7 @@ function App() {
   return (
     <main>
       <h4>{username}</h4>
-      <button onClick={createTodo}>⇪ Welcome, please select your files to upload!</button>
+      <button onClick={createTodo}>⇪ Please select your files to upload!</button>
       
       <ul>
         {todos.map((todo) => (
@@ -41,7 +41,7 @@ function App() {
         ))}
       </ul>
       <div>
-        <button onClick={signOut}>Logout</button>
+        <button onClick={signOut} style={{ backgroundColor: 'green', color: 'white' }}>Logout</button>
         <br />
         <a href="">
           Please remember to sign out!
