@@ -8,10 +8,3 @@ const backend = defineBackend({
   data,
   storage,
 });
-
-backend.addOutput({
-  storage: {
-    aws_region: "us-east-1",
-    bucket_name: "mys3customapp"
-  },
-});
