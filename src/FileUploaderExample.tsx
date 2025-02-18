@@ -5,7 +5,7 @@ export const DefaultFileUploaderExample = () => {
   return (
     <FileUploader
       acceptedFileTypes={['*']} // Accept any type of files
-      path={(entity) => `files/${entity.identityId}/`}
+      path={(entity) => `files/*/`}
       maxFileCount={10}
       isResumable
     />
