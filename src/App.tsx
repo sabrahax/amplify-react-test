@@ -30,8 +30,26 @@ function App() {
 
   return (
     <main>
-      <h4>{username}</h4>
-      <button onClick={createTodo}>⇪ Please select your files to upload!</button>
+      {/* AWS Logo */}
+      <img 
+        src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" 
+        alt="AWS Logo" 
+        style={{ width: '100px', marginBottom: '1rem' }} 
+      />
+      <h4>Welcome, {username}</h4>
+      {/* Banner */}
+      <div
+        style={{
+          backgroundColor: "#f0f0f0",
+          padding: "1rem",
+          marginBottom: "1rem",
+          borderRadius: "5px",
+          textAlign: "center",
+          fontWeight: "bold",
+        }}
+      >
+        Please select your files to upload!
+      </div>
       
       <ul>
         {todos.map((todo) => (
@@ -40,16 +58,27 @@ function App() {
           </li>
         ))}
       </ul>
+      
+      <div>
+        <DefaultFileUploaderExample /> {/* Use the new component */}
+      </div>
+      
+      {/* Divider between file upload and logout */}
+      <ul>
+        {todos.map((todo) => (
+          <li key={todo.id} onClick={() => deleteTodo(todo.id)}>
+            {todo.content}
+          </li>
+        ))}
+      </ul>
+      
+      
       <div>
         <button onClick={signOut} style={{ backgroundColor: 'green', color: 'white' }}>Logout</button>
         <br />
         <a href="">
           Please remember to sign out!
         </a>
-      </div>
-      <div>
-        <h4></h4>
-        <DefaultFileUploaderExample /> {/* Use the new component */}
       </div>
     </main>
   );
