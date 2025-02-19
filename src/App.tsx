@@ -18,7 +18,6 @@ function App() {
     });
   }, []);
 
-
   function deleteTodo(id: string) {
     client.models.Todo.delete({ id });
   }
@@ -37,15 +36,14 @@ function App() {
       {/* Banner */}
       <div
         style={{
-          backgroundColor: "#f0f0f0",
-          padding: "1rem",
-          marginBottom: "1rem",
-          borderRadius: "5px",
+          padding: "0.5rem",
+          borderRadius: "20px",
           textAlign: "center",
           fontWeight: "bold",
+          fontSize: "1.2rem" // Increased font size
         }}
       >
-        Please select your files to upload!
+        Pathfinder Upload Tool (PUT)
       </div>
       
       <ul>
@@ -68,7 +66,6 @@ function App() {
           </li>
         ))}
       </ul>
-      
       
       <div>
         <button onClick={signOut} style={{ backgroundColor: 'green', color: 'white' }}>Logout</button>
