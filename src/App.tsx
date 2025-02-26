@@ -70,9 +70,7 @@ function App() {
       <div>
         <button onClick={signOut} style={{ backgroundColor: 'green', color: 'white' }}>Logout</button>
         <br />
-        <a href="">
-          Please remember to sign out!
-        </a>
+        <span>Please remember to sign out!</span>
       </div>
     </main>
   );
