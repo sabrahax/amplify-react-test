@@ -462,19 +462,31 @@ export const DefaultFileUploaderExample = () => {
           </div>
           <details>
             <summary style={{ cursor: 'pointer', marginBottom: '0.5rem' }}>View uploaded files</summary>
-            <ul
+            <div
               style={{
-                maxHeight: '200px',
+                maxHeight: '400px', // Increased height
                 overflowY: 'auto',
                 padding: '10px',
                 border: '1px solid #ddd',
                 borderRadius: '4px',
+                marginBottom: '2rem' // Add bottom margin to ensure space at the end of the page
               }}
             >
-              {uploadedFiles.map((file, index) => (
-                <li key={index}>{file}</li>
-              ))}
-            </ul>
+              <ul style={{ 
+                margin: 0, 
+                padding: '0 0 0 20px',
+                listStyleType: 'disc'
+              }}>
+                {uploadedFiles.map((file, index) => (
+                  <li key={index} style={{ 
+                    padding: '3px 0',
+                    wordBreak: 'break-word' // Ensures long filenames wrap properly
+                  }}>
+                    {file}
+                  </li>
+                ))}
+              </ul>
+            </div>
           </details>
         </div>
       )}
